@@ -30,8 +30,7 @@ body {
   font-family: Arvo, Georgia, serif;
 }
 
-img,
-video {
+img {
   max-width: 100%;
 }
 
@@ -125,28 +124,18 @@ a {
   font-weight: 700;
 }
 
-.hero-video {
+.hero-card {
   margin: 0;
   justify-self: center;
   width: min(420px, 100%);
 }
 
-.hero-video video {
+.hero-card img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
-  background: #f4ecdf;
   border-radius: 28px;
   box-shadow: 0 28px 70px rgba(74, 36, 36, 0.28);
-}
-
-.hero-video figcaption {
-  margin-top: 10px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
 }
 
 .actions {
@@ -445,7 +434,7 @@ a {
     gap: 18px;
   }
 
-  .hero-video {
+  .hero-card {
     order: -1;
     width: min(460px, 100%);
   }

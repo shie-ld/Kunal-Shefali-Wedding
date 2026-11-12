@@ -42,8 +42,10 @@
           <span class="place">C-Pearl Banquets, Mundka, New Delhi</span>
         </p>
         <div class="actions">
-          <a class="btn" href="#invitation">Open the invitation</a>
-          <button class="btn ghost" type="button" id="watch-btn">Play the film</button>
+          <a class="btn" href="assets/video/invitation.mp4" download="Kunal-and-Shefali-Wedding-Invitation.mp4"
+            >Download the invitation</a
+          >
+          <a class="btn ghost" href="#invitation">Open the invitation</a>
           <button class="btn ghost" id="music-btn" type="button" aria-pressed="false">
             <span aria-hidden="true">♫</span>
             <span class="music-label">Play song</span>
@@ -51,19 +53,13 @@
         </div>
       </div>
 
-      <figure class="hero-video">
-        <video
-          id="invite-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-          poster="assets/img/poster.jpg"
-        >
-          <source src="assets/video/invitation.mp4" type="video/mp4" />
-        </video>
-        <figcaption>Invitation film · use the speaker icon for the video’s sound</figcaption>
+      <figure class="hero-card">
+        <img
+          src="assets/img/poster.jpg"
+          alt="Illustrated invitation card for Kunal and Shefali"
+          width="1080"
+          height="1920"
+        />
       </figure>
     </header>
 
@@ -107,7 +103,7 @@
             >See the venue</a
           >
           <a class="btn ghost" href="assets/video/invitation.mp4" download="Kunal-and-Shefali-Wedding-Invitation.mp4"
-            >Download invitation</a
+            >Download the invitation</a
           >
         </div>
       </section>
@@ -209,7 +205,7 @@
       <p class="credit">A wedding invitation in the spirit of the family website template, with Din Shagna Da.</p>
     </footer>
 
-    <audio id="my_audio" loop preload="auto" src="assets/mp3/song.mp3"></audio>
+    <audio id="my_audio" loop preload="none" src="assets/mp3/song.mp3"></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>

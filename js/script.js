@@ -15,8 +15,6 @@
 (function () {
   var audio = document.getElementById("my_audio");
   var musicBtn = document.getElementById("music-btn");
-  var video = document.getElementById("invite-video");
-  var watchBtn = document.getElementById("watch-btn");
   var label = musicBtn.querySelector(".music-label");
   var songStarted = false;
 
@@ -26,9 +24,6 @@
   }
 
   function playSong() {
-    if (!video.paused && !video.muted) {
-      video.muted = true;
-    }
     var pending = audio.play();
     if (pending && pending.then) {
       pending.then(function () {
@@ -47,7 +42,7 @@
   }
 
   document.addEventListener("pointerdown", function (event) {
-    if (event.target.closest("#music-btn, #watch-btn, video, a, button")) {
+    if (event.target.closest("#music-btn, a, button")) {
       return;
     }
     if (!songStarted) {
@@ -62,44 +57,6 @@
       playSong();
     } else {
       pauseSong();
-    }
-  });
-
-  function filmHasSound() {
-    return !video.muted && !video.paused;
-  }
-
-  video.addEventListener("play", function () {
-    if (filmHasSound()) {
-      pauseSong();
-    }
-  });
-
-  video.addEventListener("volumechange", function () {
-    if (!video.muted) {
-      video.loop = false;
-      pauseSong();
-      if (video.paused) {
-        video.play();
-      }
-    } else {
-      video.loop = true;
-    }
-  });
-
-  watchBtn.addEventListener("click", function () {
-    songStarted = true;
-    pauseSong();
-    video.scrollIntoView({ behavior: "smooth", block: "center" });
-    video.loop = false;
-    video.muted = false;
-    video.currentTime = 0;
-    var pending = video.play();
-    if (pending && pending.catch) {
-      pending.catch(function () {
-        video.muted = true;
-        video.play();
-      });
     }
   });
 
