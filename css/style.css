@@ -32,6 +32,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -127,15 +128,19 @@ a {
 .hero-card {
   margin: 0;
   justify-self: center;
-  width: min(420px, 100%);
+  width: auto;
+  max-width: 100%;
 }
 
 .hero-card img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  border-radius: 28px;
-  box-shadow: 0 28px 70px rgba(74, 36, 36, 0.28);
+  max-width: min(360px, 100%);
+  max-height: calc(100vh - 80px);
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(74, 36, 36, 0.22);
 }
 
 .actions {
@@ -436,7 +441,12 @@ a {
 
   .hero-card {
     order: -1;
-    width: min(460px, 100%);
+    width: auto;
+  }
+
+  .hero-card img {
+    max-width: min(320px, 78vw);
+    max-height: 62vh;
   }
 
   .hero h1 {
